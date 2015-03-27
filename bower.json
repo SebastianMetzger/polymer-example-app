@@ -1,0 +1,21 @@
+{
+  "name": "A Smashing Google Polymer Example Project",
+  "version": "0.0.0",
+  "authors": [
+    "Sebastian Metzger <sebastian.t.metzger@gmail.com>"
+  ],
+  "description": "Project that goes along with the blogpost: ...",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.8.0",
+    "core-elements": "Polymer/core-elements#0.5.5",
+    "paper-elements": "Polymer/paper-elements#0.5.5"
+  }
+}
