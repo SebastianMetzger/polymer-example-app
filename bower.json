@@ -21,7 +21,9 @@
     "paper-menu": "git@github.com:PolymerElements/paper-menu.git#v0.9.2",
     "paper-menu-button": "git@github.com:PolymerElements/paper-menu-button.git#master",
     "paper-item": "git@github.com:PolymerElements/paper-item.git#v0.9.2",
-    "google-map": "git@github.com:GoogleWebComponents/google-map.git#0.8-preview"
+    "google-map": "git@github.com:GoogleWebComponents/google-map.git#0.8-preview",
+    "x-gif": "~0.1.1",
+    "app-router": "~2.6.1"
   },
   "resolutions": {
     "polymer": "~0.9.0",

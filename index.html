@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Import Web Component Polyfills -->
+     <!-- Import Web Component Polyfills -->
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- Import Iron Core Elements -->
+    <link rel="import" href="/bower_components/iron-pages/iron-pages.html">
     <!-- Import Polymer Paper Elements -->
     <link rel="import" href="/bower_components/polymer/polymer.html">
     <link rel="import" href="/bower_components/paper-drawer-panel/paper-drawer-panel.html">
@@ -10,23 +12,60 @@
     <link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="/bower_components/paper-menu/paper-menu.html">
     <link rel="import" href="/bower_components/paper-item/paper-item.html">
+    <!-- Import External Web Components -->
     <link rel="import" href="/bower_components/google-map/google-map.html">
+    <link rel="import" href="/bower_components/app-router/app-router.html">
+    <link rel="import" href="/bower_components/x-gif/dist/x-gif.html">
+    <link rel="import" href="/bower_components/angular-zippy/dist/x-gif.html">
   </head>
   <body>
-  	<paper-drawer-panel>
-      <paper-header-panel drawer>
-        <paper-toolbar>Sidebar</paper-toolbar>
-        <paper-menu>
-          <paper-item>One</paper-item>
-          <paper-item>Two</paper-item>
-          <paper-item>Three</paper-item>
-          <paper-item>Four</paper-item>
-        </paper-menu>
-      </paper-header-panel>
-      <paper-header-panel main>
-        <paper-toolbar>Main</paper-toolbar>
-        <google-map latitude="37.779" longitude="-122.3892"></google-map>
-      </paper-header-panel>
-    </paper-drawer-panel>
+    // Mark up the application
+    <dom-module id="smashing-app">
+      <template>
+        <paper-drawer-panel>
+          <paper-header-panel drawer>
+            <paper-toolbar>Sidebar</paper-toolbar>
+            <paper-menu selected="{{selected}}">
+              <!-- <paper-item>One</paper-item>
+              <paper-item>Two</paper-item>
+              <paper-item>Three</paper-item>
+              <paper-item>Four</paper-item> -->
+              <a href="#/0">One</a>
+              <a href="#/1">Two</a>
+              <a href="#/2">Three</a>
+              <a href="#/3">Four</a>
+            </paper-menu>
+          </paper-header-panel>
+          <paper-header-panel main>
+            <paper-toolbar>Main</paper-toolbar>
+            <iron-pages selected="{{selected}}">
+              <div>
+                <h1>Polymer example</h1>
+              </div>
+              <div>
+               <h1>x-gif Example</h1>
+               <x-gif src="example.gif"></x-gif>
+              </div>
+              <div>
+                <h1>google-map Example</h1>
+                <div style="height: 600px;">
+                  <google-map latitude="37.779" longitude="-122.3892"></google-map>
+                </div>
+              </div>
+            </iron-pages>
+          </paper-header-panel>
+        </paper-drawer-panel>
+      </template>
+    </dom-module>
+    <script>
+      // register a new element called proto-element
+      Polymer({
+        is: "smashing-app"
+      });
+    </script>
+    <smashing-app></smashing-app>
+     <app-router>
+        <app-route path=":selected" element="smashing-app" bindRouter></app-route>
+      </app-router>
   </body>
 </html>
